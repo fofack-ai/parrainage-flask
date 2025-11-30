@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription 1ère Année - Parrainage</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-form">
+            <div class="logo">
+                <h2>Inscription 1ère Année</h2>
+                <p>Trouvez votre parrain de 2ème année</p>
+            </div>
+            
+            <form id="signupForm">
+                <div class="form-group">
+                    <input type="text" id="nom" placeholder="Votre nom complet" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="matricule" placeholder="Votre matricule" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Mot de passe" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirmer mot de passe" required>
+                </div>
+                
+                <div class="form-group">
+                    <select id="serie" required>
+                        <option value="">Choisir votre série</option>
+                        <option value="TI-RSI">TI-RSI</option>
+                        <option value="TI-PAM">TI-PAM</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                    S'inscrire et trouver mon parrain
+                </button>
+            </form>
+            
+            <div id="loading" class="loading hidden">
+                <p>⏳ Recherche d'un parrain disponible...</p>
+            </div>
+            
+            <p class="auth-link">
+                Déjà inscrit ? <a href="./login.html">Se connecter</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal Parrain Attribué -->
+    <div id="parrainModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 Parrain Attribué !</h2>
+            <p>Votre parrain en <span id="parrainSerie"></span> :</p>
+            
+            <div class="parrain-card">
+                <div class="parrain-photo">
+                    <img id="parrainImage" src="" alt="Photo parrain" onerror="this.src='https://via.placeholder.com/100?text=Photo'">
+                </div>
+                <div class="parrain-info">
+                    <h3 id="parrainName"></h3>
+                    <p class="parrain-contact">
+                        <strong>📞 WhatsApp :</strong> 
+                        <a id="parrainWhatsapp" href="#" target="_blank" class="whatsapp-link">
+                            <span id="parrainPhone"></span>
+                        </a>
+                    </p>
+                    <p><strong>🎓 Série :</strong> <span id="parrainSerieText"></span></p>
+                    <p><strong>📧 Matricule :</strong> <span id="parrainMatricule"></span></p>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button id="goToDashboard" class="btn btn-primary">Accéder à mon espace</button>
+                <button id="closeModal" class="btn btn-outline">Fermer</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

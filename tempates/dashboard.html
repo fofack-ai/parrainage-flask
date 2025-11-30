@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Parrainage</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <h1>🎓 Mon Espace</h1>
+            <nav>
+                <span id="userName">Utilisateur</span>
+                <button id="logoutBtn" class="btn btn-outline">Déconnexion</button>
+            </nav>
+        </header>
+        
+        <main class="dashboard-content">
+            <!-- Pour les Filleuls (niveau 1) -->
+            <div id="filleulView" class="dashboard-section hidden">
+                <h2>Mon Parrain</h2>
+                <div class="card" id="parrainInfo">
+                    <p class="no-parrain">⏳ Aucun parrain attribué pour le moment</p>
+                </div>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Statut</h3>
+                        <p id="statutFilleul">En attente de parrain</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Série</h3>
+                        <p id="serieFilleul">-</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pour les Parrains (niveau 2) -->
+            <div id="parrainView" class="dashboard-section hidden">
+                <h2>Mon Filleul</h2>
+                <div class="card" id="filleulInfo">
+                    <p class="no-filleul">📝 Aucun filleul pour le moment</p>
+                </div>
+                
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Filleuls assignés</h3>
+                        <p id="nombreFilleuls">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Statut</h3>
+                        <p id="statutParrain">Disponible</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

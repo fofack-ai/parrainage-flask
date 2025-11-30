@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: plateforme-parrainage
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: MYSQL_HOST
+        fromDatabase:
+          name: parrainage-db
+          property: host
+      - key: MYSQL_USER
+        fromDatabase:
+          name: parrainage-db
+          property: user
+      - key: MYSQL_PASSWORD
+        fromDatabase:
+          name: parrainage-db
+          property: password
+      - key: MYSQL_DB
+        fromDatabase:
+          name: parrainage-db
+          property: database
+
+databases:
+  - name: parrainage-db
+    plan: free
